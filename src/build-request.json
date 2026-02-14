@@ -1,0 +1,59 @@
+{
+  "kind": "build_request",
+  "title": "Add first-entry “Do you love me?” mini-game with evasive No button",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "text": "Add a first-entry prompt overlay that appears before revealing the Valentine page content, asking the user “Do you love me?” with exactly two options: “Yes” and “No”, and keep all other existing page sections and behavior unchanged once the user proceeds.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "First enter ayedapudu oka game petu like do u love me ani no yes two options ... megatadi as it is petu"
+        ]
+      },
+      "acceptanceCriteria": [
+        "On initial app load, the user sees a prompt asking “Do you love me?” with two visible buttons: “Yes” and “No”.",
+        "The existing Valentine experience (Surprise reveal + sections) does not render until the user completes this prompt.",
+        "After proceeding past the prompt, the rest of the site behaves exactly as before (including replay behavior).",
+        "All user-facing text for this new prompt is in English."
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Implement the “No” option behavior so that when the user attempts to select “No”, the “No” button moves/jumbles vertically (up/down) within the prompt area to avoid being selected, while the “Yes” button remains stable and can be selected normally to proceed.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "no option select cheste adi jumble avali like up and down only yes option select chese la vundali"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking/tapping “No” causes the “No” button to change position vertically (up/down) in a noticeable way within the prompt container.",
+        "The “No” button movement stays within the prompt UI bounds (does not overlap outside the overlay or become unreachable/off-screen).",
+        "The “Yes” button remains clickable and stationary at all times.",
+        "Selecting “Yes” proceeds to the existing experience flow (the current SurpriseReveal and then the main page content)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not change backend behavior; keep backend/main.mo as-is unless strictly required (it should not be required for this feature).",
+    "Do not edit any files under frontend/src/hooks/* or frontend/src/components/ui (immutable paths).",
+    "Keep the rest of the Valentine page content, sections, and mini-games unchanged aside from inserting this new first-entry prompt flow."
+  ],
+  "nonGoals": [
+    "Adding authentication, persistence, or tracking for the Yes/No choice.",
+    "Adding additional answer options beyond Yes/No.",
+    "Changing existing Valentine page copy, games, or styling beyond what is necessary to integrate the new first-entry prompt."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

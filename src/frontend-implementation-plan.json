@@ -1,0 +1,46 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "First-entry “Do you love me?” overlay with evasive No button",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "summary": "Gate the Valentine experience behind a first-entry overlay prompt asking “Do you love me?” with exactly two options (Yes/No), without changing the existing reveal + page behavior after proceeding.",
+      "acceptanceCriteria": [
+        "On initial app load, the user sees a prompt asking “Do you love me?” with two visible buttons: “Yes” and “No”.",
+        "The existing Valentine experience (Surprise reveal + sections) does not render until the user completes this prompt.",
+        "After proceeding past the prompt, the rest of the site behaves exactly as before (including replay behavior).",
+        "All user-facing text for this new prompt is in English."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/valentine/FirstEntryLovePrompt.tsx",
+          "operation": "create",
+          "description": "Create a full-screen, fixed overlay prompt component that asks “Do you love me?” and renders exactly two visible actions (“Yes” and “No”). Expose a single callback (e.g., onProceed) that is invoked only when “Yes” is selected, so the rest of the app can proceed unchanged."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a first-entry gating state before the existing SurpriseReveal/content flow. Render the new FirstEntryLovePrompt overlay before SurpriseReveal and the main Valentine sections. Ensure replay resets only the existing reveal state (keeps the prompt completed for the session) so post-prompt behavior remains exactly as before."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Make the “No” button evade selection by moving vertically (up/down) within the prompt bounds on user attempts, while keeping “Yes” stable and proceeding normally on “Yes”.",
+      "acceptanceCriteria": [
+        "Clicking/tapping “No” causes the “No” button to change position vertically (up/down) in a noticeable way within the prompt container.",
+        "The “No” button movement stays within the prompt UI bounds (does not overlap outside the overlay or become unreachable/off-screen).",
+        "The “Yes” button remains clickable and stationary at all times.",
+        "Selecting “Yes” proceeds to the existing experience flow (the current SurpriseReveal and then the main page content)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/valentine/FirstEntryLovePrompt.tsx",
+          "operation": "modify",
+          "description": "Implement evasive “No” behavior: on click/tap attempt, compute a new vertical position for the “No” button within the prompt container bounds (using measurements via refs if needed) and animate the move (e.g., transition). Keep the “Yes” button in a stable layout position and ensure “Yes” remains normally clickable to proceed."
+        }
+      ]
+    }
+  ]
+}

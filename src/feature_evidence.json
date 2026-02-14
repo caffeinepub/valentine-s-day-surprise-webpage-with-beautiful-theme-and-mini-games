@@ -1,0 +1,42 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-a-first-entry-prompt-overlay-that-appears-before-revealing-the-valentine-page-content-asking-the-user-do-you-love-me-with-exactly-two-options-yes-and-no-and-keep-all-other-existing-page-sections-and-behavior-unchanged-once-the-user-proceeds",
+      "featureTitle": "Add a first-entry prompt overlay that appears before revealing the Valentine page content, asking the user “Do you love me?” with exactly two options: “Yes” and “No”, and keep all other existing page sections and behavior unchanged once the user proceeds.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/valentine/FirstEntryLovePrompt.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-no-option-behavior-so-that-when-the-user-attempts-to-select-no-the-no-button-moves-jumbles-vertically-up-down-within-the-prompt-area-to-avoid-being-selected-while-the-yes-button-remains-stable-and-can-be-selected-normally-to-proceed",
+      "featureTitle": "Implement the “No” option behavior so that when the user attempts to select “No”, the “No” button moves/jumbles vertically (up/down) within the prompt area to avoid being selected, while the “Yes” button remains stable and can be selected normally to proceed.",
+      "files": [
+        "frontend/src/components/valentine/FirstEntryLovePrompt.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

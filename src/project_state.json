@@ -1,24 +1,16 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "Project to add a simple interactive first-entry mini-game prompt (\"Do you love me\") with Yes/No options where the No option moves/jumbles to encourage selecting Yes.",
+  "summary": "New project",
   "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
   "existing_features": [
     {
-      "id": "feature-add-a-first-entry-prompt-overlay-that-appears-before-revealing-the-valentine-page-content-asking-the-user-do-you-love-me-with-exactly-two-options-yes-and-no-and-keep-all-other-existing-page-sections-and-behavior-unchanged-once-the-user-proceeds",
-      "title": "Add a first-entry prompt overlay that appears before revealing the Valentine page content, asking the user “Do you love me?” with exactly two options: “Yes” and “No”, and keep all other existing page sections and behavior unchanged once the user proceeds.",
+      "id": "feature-remove-the-visible-copyright-text-2026-and-any-dynamic-equivalent-like-currentyear-from-the-app-ui-including-the-footer-in-the-closing-section",
+      "title": "Remove the visible copyright text \"© 2026\" (and any dynamic equivalent like \"© {currentYear}\") from the app UI, including the footer in the Closing section.",
       "reqIds": [
-        "REQ-12"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-implement-the-no-option-behavior-so-that-when-the-user-attempts-to-select-no-the-no-button-moves-jumbles-vertically-up-down-within-the-prompt-area-to-avoid-being-selected-while-the-yes-button-remains-stable-and-can-be-selected-normally-to-proceed",
-      "title": "Implement the “No” option behavior so that when the user attempts to select “No”, the “No” button moves/jumbles vertically (up/down) within the prompt area to avoid being selected, while the “Yes” button remains stable and can be selected normally to proceed.",
-      "reqIds": [
-        "REQ-13"
+        "REQ-1"
       ],
       "version": 1
     }
@@ -26,12 +18,12 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Add first-entry mini-game prompt: \"Do you love me\" with Yes/No; selecting No makes the No option move/jumble (up/down) so only Yes is easily selectable; keep rest of app/site unchanged.",
+      "summary": "Remove the “© 2026” text from the game/app UI (e.g., footer/splash/about)",
       "reqIds": [],
       "status": "pending"
     }
   ],
-  "projectName": "Add first-entry “Do you love me?” mini-game with evasive No button",
+  "projectName": "Remove copyright year text from UI",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

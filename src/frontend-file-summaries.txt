@@ -9,7 +9,7 @@
   "frontend/src/components/valentine/PlaySection.tsx": "Games section with tab-style switcher between Memory Match and Love Quiz games.",
   "frontend/src/components/valentine/games/MemoryMatchGame.tsx": "Interactive memory card matching game with Valentine's themed icons, move counter, and win state.",
   "frontend/src/components/valentine/games/LoveQuizGame.tsx": "Multiple-choice love quiz with 6 questions, progress tracking, scoring, and personalized result messages.",
-  "frontend/src/components/valentine/ClosingSection.tsx": "Final section with closing message, navigation buttons, and simplified footer without external attribution links.",
+  "frontend/src/components/valentine/ClosingSection.tsx": "Final section with closing message and navigation buttons (Back to Top and Replay Surprise) without any footer or copyright text.",
   "frontend/src/index.css": "Global styles with Valentine's themed OKLCH color system (reds/pinks/cream), custom animations, and typography using Playfair Display and Inter fonts.",
   "frontend/tailwind.config.js": "Tailwind configuration extended with Valentine's color palette, custom fonts (Playfair Display serif, Inter sans), and rose-glow shadow utility.",
   "frontend/index.html": "HTML entry point with updated title, description, and Google Fonts preload for Playfair Display and Inter typefaces.",

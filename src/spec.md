@@ -1,12 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Add a first-entry “Do you love me?” prompt mini-game that gates the Valentine page until the user selects “Yes”.
+**Goal:** Remove all visible "© + year" copyright text (including dynamic current-year variants) from the app UI.
 
 **Planned changes:**
-- Add a full-page prompt overlay shown on initial load that asks “Do you love me?” with exactly two buttons: “Yes” and “No”.
-- Prevent the existing Valentine experience (Surprise reveal + all sections) from rendering until the prompt is completed.
-- Implement evasive behavior for the “No” button: on click/tap it moves vertically (up/down) within the prompt bounds so it’s difficult to select, while “Yes” stays stationary and proceeds normally.
-- Ensure that after selecting “Yes”, the existing Valentine page flow and replay behavior continue exactly as before.
+- Remove the copyright line that renders "© {year}" from the Closing section footer.
+- Ensure no other UI area (prompt, reveal, hero, message, games, nav) renders "© 2026" or any "© + year" text.
+- Adjust spacing/layout to avoid empty footer elements or awkward gaps after the text is removed.
 
-**User-visible outcome:** On opening the app, the user first sees a “Do you love me?” overlay with “Yes” and “No”; trying to tap “No” makes it jump up/down, and tapping “Yes” reveals the original Valentine experience unchanged.
+**User-visible outcome:** The app no longer displays any "© 2026" (or "© {currentYear}") text anywhere, and the layout remains visually consistent.

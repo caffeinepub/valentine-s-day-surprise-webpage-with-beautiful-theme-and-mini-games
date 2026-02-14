@@ -135,6 +135,25 @@
             transform: translateY(-10px);
         }
     }
+
+    .animate-teddy-jump {
+        animation: teddy-jump 1.5s ease-in-out infinite;
+    }
+
+    @keyframes teddy-jump {
+        0%, 100% {
+            transform: translateY(0) scale(1);
+        }
+        25% {
+            transform: translateY(-30px) scale(1.05);
+        }
+        50% {
+            transform: translateY(0) scale(1);
+        }
+        75% {
+            transform: translateY(-15px) scale(1.02);
+        }
+    }
     
     .animate-fade-in {
         animation: fade-in 1s ease-out;
@@ -156,6 +175,168 @@
         to {
             opacity: 1;
             transform: translateY(0);
+        }
+    }
+
+    /* Enhanced Open Animation Effects */
+    .animate-burst-particle {
+        animation: burst-particle 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    @keyframes burst-particle {
+        0% {
+            transform: translate(0, 0) scale(0) rotate(0deg);
+            opacity: 1;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            transform: translate(
+                calc(cos(var(--burst-angle)) * var(--burst-distance)),
+                calc(sin(var(--burst-angle)) * var(--burst-distance))
+            ) scale(1) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    .animate-glow-pulse {
+        animation: glow-pulse 0.8s ease-out forwards;
+    }
+
+    @keyframes glow-pulse {
+        0% {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+        50% {
+            transform: scale(1.2);
+            opacity: 0.6;
+        }
+        100% {
+            transform: scale(1.5);
+            opacity: 0;
+        }
+    }
+
+    .animate-envelope-pop {
+        animation: envelope-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    @keyframes envelope-pop {
+        0% {
+            transform: scale(0.8) rotate(-5deg);
+            opacity: 0;
+        }
+        50% {
+            transform: scale(1.1) rotate(2deg);
+        }
+        100% {
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+        }
+    }
+
+    .animate-letter-spring {
+        animation: letter-spring 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    @keyframes letter-spring {
+        0% {
+            transform: translateY(0) scale(0.8);
+            opacity: 0;
+        }
+        60% {
+            transform: translateY(-60px) scale(1.05);
+            opacity: 1;
+        }
+        80% {
+            transform: translateY(-45px) scale(0.98);
+        }
+        100% {
+            transform: translateY(-48px) scale(1);
+            opacity: 1;
+        }
+    }
+
+    .animate-pulse-glow {
+        animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+        0%, 100% {
+            box-shadow: 0 0 20px rgba(244, 63, 94, 0.3), 0 0 40px rgba(244, 63, 94, 0.2);
+        }
+        50% {
+            box-shadow: 0 0 30px rgba(244, 63, 94, 0.5), 0 0 60px rgba(244, 63, 94, 0.3);
+        }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+        .animate-burst-particle {
+            animation: burst-particle-reduced 0.5s ease-out forwards;
+        }
+
+        @keyframes burst-particle-reduced {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .animate-glow-pulse {
+            animation: glow-pulse-reduced 0.5s ease-out forwards;
+        }
+
+        @keyframes glow-pulse-reduced {
+            0% {
+                opacity: 0.3;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .animate-envelope-pop {
+            animation: envelope-pop-reduced 0.4s ease-out forwards;
+        }
+
+        @keyframes envelope-pop-reduced {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .animate-letter-spring {
+            animation: letter-spring-reduced 0.6s ease-out forwards;
+        }
+
+        @keyframes letter-spring-reduced {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(-48px);
+                opacity: 1;
+            }
+        }
+
+        .animate-pulse-glow {
+            animation: none;
+            box-shadow: 0 0 20px rgba(244, 63, 94, 0.3);
+        }
+
+        .animate-float,
+        .animate-bounce-slow,
+        .animate-teddy-jump {
+            animation: none;
         }
     }
 }

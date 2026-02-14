@@ -1,6 +1,6 @@
 {
-  "frontend/src/App.tsx": "Main application component that gates the Valentine experience behind a first-entry love prompt, then manages the reveal state and composes all Valentine's Day sections with theme provider.",
-  "frontend/src/config/valentineContent.ts": "Centralized configuration file containing all personalized text content including the custom Telugu love letter message for the Valentine's experience.",
+  "frontend/src/App.tsx": "Main application component that orchestrates the Valentine experience flow with the mail intro and love prompt shown as an overlay when the letter opens, followed by surprise reveal and all Valentine sections with theme provider and replay functionality.",
+  "frontend/src/config/valentineContent.ts": "Centralized configuration file containing all personalized text content including the custom Telugu love letter message with \"To My Dear Wife\" salutation for the Valentine's experience.",
   "frontend/src/components/valentine/SurpriseReveal.tsx": "Cover screen component with animated hearts and a prominent CTA button that reveals the main content with smooth transition.",
   "frontend/src/components/valentine/SectionNav.tsx": "Fixed navigation bar with section links and replay button for easy navigation through the Valentine's experience.",
   "frontend/src/components/valentine/ValentineLayout.tsx": "Reusable layout wrapper component that provides consistent spacing, optional pattern background, and section framing.",
@@ -9,10 +9,11 @@
   "frontend/src/components/valentine/PlaySection.tsx": "Games section with tab-style switcher between Memory Match and Love Quiz games.",
   "frontend/src/components/valentine/games/MemoryMatchGame.tsx": "Interactive memory card matching game with Valentine's themed icons, move counter, and win state.",
   "frontend/src/components/valentine/games/LoveQuizGame.tsx": "Multiple-choice love quiz with 6 questions, progress tracking, scoring, and personalized result messages.",
-  "frontend/src/components/valentine/ClosingSection.tsx": "Final section with closing message and navigation buttons (Back to Top and Replay Surprise) without any footer or copyright text.",
-  "frontend/src/index.css": "Global styles with Valentine's themed OKLCH color system (reds/pinks/cream), custom animations, and typography using Playfair Display and Inter fonts.",
+  "frontend/src/components/valentine/ClosingSection.tsx": "Final section with animated teddy bear, Yes/No choice buttons that display personalized messages (\"I love you, wife garu\" for Yes, playful redirect for No), and navigation buttons (Back to Top and Replay Surprise) with full dark theme support.",
+  "frontend/src/index.css": "Global styles with Valentine's themed OKLCH color system, custom animations including float, pulse, bounce, fade-in variants, teddy jump animation, enhanced Open animation effects (burst particles, glow pulse, envelope pop, letter spring), and comprehensive reduced-motion fallbacks for all animations.",
   "frontend/tailwind.config.js": "Tailwind configuration extended with Valentine's color palette, custom fonts (Playfair Display serif, Inter sans), and rose-glow shadow utility.",
   "frontend/index.html": "HTML entry point with updated title, description, and Google Fonts preload for Playfair Display and Inter typefaces.",
   "frontend/src/hooks/useQueries.ts": "Minimal placeholder file as the app is entirely frontend-only with no backend queries needed.",
-  "frontend/src/components/valentine/FirstEntryLovePrompt.tsx": "Full-screen overlay component that asks \"Do you love me?\" with a stable \"Yes\" button and an evasive \"No\" button that randomly repositions vertically and horizontally within bounds when clicked, proceeding only when \"Yes\" is selected."
+  "frontend/src/components/valentine/FirstEntryLovePrompt.tsx": "Full-screen overlay component that asks \"Do you love me?\" with a stable \"Yes\" button and an evasive \"No\" button that randomly repositions vertically and horizontally within bounds when clicked, proceeding only when \"Yes\" is selected.",
+  "frontend/src/components/valentine/MailLetterIntro.tsx": "Full-screen intro component with an animated envelope/letter scene featuring enhanced Open animation with particle burst, glow effects, spring motion, and wife-specific copy, notifying parent when letter opens/closes to trigger the love prompt overlay."
 }

@@ -1,21 +1,63 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Remove copyright year text from UI",
+  "title": "Closing section teddy jump animation and Yes/No final choice",
   "requirements": [
     {
-      "id": "REQ-1",
-      "summary": "Remove any rendered \"©\" + year copyright text from the UI (including the Closing section footer) while keeping layout visually consistent.",
+      "id": "REQ-2",
+      "summary": "Show a prominent teddy in the Closing section with a looping jump animation that respects prefers-reduced-motion and looks correct in light/dark themes.",
       "acceptanceCriteria": [
-        "The Closing section footer no longer renders any \"©\" + year text (e.g., \"© 2026\" or \"© 2024\").",
-        "No other screen (prompt, reveal, hero, message, games, nav) displays \"© 2026\" anywhere in the UI.",
-        "The page layout remains visually consistent after removal (no awkward extra spacing or empty footer element)."
+        "When the user reaches the last/closing section, a teddy graphic is displayed prominently.",
+        "The teddy has a continuous jump/bounce animation (and respects prefers-reduced-motion by reducing/disabling the animation).",
+        "The teddy renders correctly in both light and dark themes without visual glitches."
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/valentine/ClosingSection.tsx",
           "operation": "modify",
-          "description": "Remove the dynamic year calculation and delete the footer block that renders the \"© {currentYear}\" text; adjust surrounding spacing/classes so the section ends cleanly without an empty footer area, and remove any now-unused imports to keep the file clean."
+          "description": "Add a prominently placed teddy image element in the Closing section and apply a dedicated looping jump/bounce animation class; adjust Closing section container styling to include dark theme variants so the teddy and surrounding content render cleanly in both themes."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add a new utility animation (e.g., teddy jump/bounce keyframes + class) and ensure prefers-reduced-motion disables/reduces that animation (extend the existing reduced-motion media query to include the new class)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add Yes/No choice buttons in the Closing section and display the correct confirmation/playful messages while keeping existing actions available.",
+      "acceptanceCriteria": [
+        "The Closing section includes two clearly labeled buttons: “Yes” and “No”.",
+        "Clicking “Yes” displays exactly: \"I love you, wife garu\" (English text).",
+        "Clicking “No” displays an English message that instructs the user to click “Yes” (e.g., \"No means: go and click Yes.\") without navigating away or breaking the flow.",
+        "The existing Closing section actions (“Back to Top”, “Replay Surprise”) remain available and continue working as before (either retained alongside the new buttons or reorganized without loss of functionality)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/valentine/ClosingSection.tsx",
+          "operation": "modify",
+          "description": "Introduce local UI state to track the user's final choice and conditionally render the resulting message; add two new buttons labeled “Yes” and “No” that update the message accordingly, while retaining the existing “Back to Top” and “Replay Surprise” actions and ensuring layout remains responsive."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Add the generated teddy image as a static frontend asset and reference it from the Closing section.",
+      "acceptanceCriteria": [
+        "A teddy image file exists under frontend/public/assets/generated and is referenced by the Closing section via a /assets/generated/... path.",
+        "The app builds successfully and the teddy image loads without 404s in the browser."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/valentine-teddy.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated static image asset at this exact path so it can be loaded by the browser as a public file (no backend serving)."
+        },
+        {
+          "path": "frontend/src/components/valentine/ClosingSection.tsx",
+          "operation": "modify",
+          "description": "Reference the static teddy asset using the public path /assets/generated/valentine-teddy.dim_512x512.png and ensure it has appropriate alt text and sizing for prominent display in the Closing section."
         }
       ]
     }

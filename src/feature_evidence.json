@@ -2,8 +2,27 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-remove-the-visible-copyright-text-2026-and-any-dynamic-equivalent-like-currentyear-from-the-app-ui-including-the-footer-in-the-closing-section",
-      "featureTitle": "Remove the visible copyright text \"© 2026\" (and any dynamic equivalent like \"© {currentYear}\") from the app UI, including the footer in the Closing section.",
+      "featureId": "feature-update-the-final-section-of-the-valentine-experience-the-closing-section-to-include-a-visible-teddy-that-performs-a-looping-jump-animation",
+      "featureTitle": "Update the final section of the Valentine experience (the Closing section) to include a visible teddy that performs a looping “jump” animation.",
+      "files": [
+        "frontend/src/components/valentine/ClosingSection.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-two-final-choice-buttons-in-the-closing-section-yes-and-no-on-yes-show-the-confirmation-message-i-love-you-wife-garu-on-no-show-a-playful-prompt-that-tells-the-user-to-click-yes-in-english",
+      "featureTitle": "Add two final choice buttons in the Closing section: “Yes” and “No”. On “Yes”, show the confirmation message: \"I love you, wife garu\". On “No”, show a playful prompt that tells the user to click Yes (in English).",
       "files": [
         "frontend/src/components/valentine/ClosingSection.tsx"
       ],
@@ -15,7 +34,25 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-1"
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-the-generated-teddy-image-asset-to-the-frontend-as-a-static-file-and-use-it-in-the-closing-section-do-not-serve-it-from-the-backend",
+      "featureTitle": "Add the generated teddy image asset to the frontend as a static file and use it in the Closing section (do not serve it from the backend).",
+      "files": [
+        "frontend/src/components/valentine/ClosingSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
       ],
       "confidence": "high"
     }

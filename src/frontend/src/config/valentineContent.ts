@@ -2,7 +2,7 @@ export const valentineContent = {
   wifeName: "My Dearest Love",
   heroHeadline: "Happy Valentine's Day!",
   heroSubtitle: "A special surprise made just for you",
-  messageTitle: "To My Beautiful Wife",
+  messageTitle: "To My Dear Wife",
   messageBody: `26th July 2025 naa life lo marchipoleni roju.
 
 A roju nuvvu "yes" cheppinappudu nenu chala happy ayya… kani aa happiness enti ani appudu ardham kaaledu. Ippudu ardham avtundi — ninnu life lo pondadam ante entha lucky ani.

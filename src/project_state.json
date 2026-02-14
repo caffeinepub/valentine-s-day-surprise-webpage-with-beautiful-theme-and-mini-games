@@ -1,16 +1,33 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "New project",
+  "summary": "Valentine letter reveal experience with an ending animation and interactive Yes/No choice.",
   "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Valentine teddy illustration, transparent background (valentine-teddy.dim_512x512.png)",
   "existing_features": [
     {
-      "id": "feature-remove-the-visible-copyright-text-2026-and-any-dynamic-equivalent-like-currentyear-from-the-app-ui-including-the-footer-in-the-closing-section",
-      "title": "Remove the visible copyright text \"© 2026\" (and any dynamic equivalent like \"© {currentYear}\") from the app UI, including the footer in the Closing section.",
+      "id": "feature-update-the-final-section-of-the-valentine-experience-the-closing-section-to-include-a-visible-teddy-that-performs-a-looping-jump-animation",
+      "title": "Update the final section of the Valentine experience (the Closing section) to include a visible teddy that performs a looping “jump” animation.",
       "reqIds": [
-        "REQ-1"
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-two-final-choice-buttons-in-the-closing-section-yes-and-no-on-yes-show-the-confirmation-message-i-love-you-wife-garu-on-no-show-a-playful-prompt-that-tells-the-user-to-click-yes-in-english",
+      "title": "Add two final choice buttons in the Closing section: “Yes” and “No”. On “Yes”, show the confirmation message: \"I love you, wife garu\". On “No”, show a playful prompt that tells the user to click Yes (in English).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-generated-teddy-image-asset-to-the-frontend-as-a-static-file-and-use-it-in-the-closing-section-do-not-serve-it-from-the-backend",
+      "title": "Add the generated teddy image asset to the frontend as a static file and use it in the Closing section (do not serve it from the backend).",
+      "reqIds": [
+        "REQ-4"
       ],
       "version": 1
     }
@@ -18,12 +35,13 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Remove the “© 2026” text from the game/app UI (e.g., footer/splash/about)",
+      "summary": "Add final Valentine teddy jump animation with Yes/No choices (Yes shows 'I love you wife garu'; No prompts user to click Yes)",
       "reqIds": [],
       "status": "pending"
     }
   ],
-  "projectName": "Remove copyright year text from UI",
+  "gameProjectType": "none",
+  "projectName": "Add final teddy jump animation with Yes/No choice at the end",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

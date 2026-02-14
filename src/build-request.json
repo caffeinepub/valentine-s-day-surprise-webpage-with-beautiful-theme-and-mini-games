@@ -1,37 +1,76 @@
 {
   "kind": "build_request",
-  "title": "Remove copyright year text from UI",
+  "title": "Add final teddy jump animation with Yes/No choice at the end",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-1",
-      "text": "Remove the visible copyright text \"© 2026\" (and any dynamic equivalent like \"© {currentYear}\") from the app UI, including the footer in the Closing section.",
+      "id": "REQ-2",
+      "text": "Update the final section of the Valentine experience (the Closing section) to include a visible teddy that performs a looping “jump” animation.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "recent-messages-4"
+          "msg-4"
         ],
         "quotes": [
-          "Remove © 2026"
+          "At the last will be my valentine teady jump animation"
         ]
       },
       "acceptanceCriteria": [
-        "The Closing section footer no longer renders any \"©\" + year text (e.g., \"© 2026\" or \"© 2024\").",
-        "No other screen (prompt, reveal, hero, message, games, nav) displays \"© 2026\" anywhere in the UI.",
-        "The page layout remains visually consistent after removal (no awkward extra spacing or empty footer element)."
+        "When the user reaches the last/closing section, a teddy graphic is displayed prominently.",
+        "The teddy has a continuous jump/bounce animation (and respects prefers-reduced-motion by reducing/disabling the animation).",
+        "The teddy renders correctly in both light and dark themes without visual glitches."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add two final choice buttons in the Closing section: “Yes” and “No”. On “Yes”, show the confirmation message: \"I love you, wife garu\". On “No”, show a playful prompt that tells the user to click Yes (in English).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "and two options if it click yes I love you wife garu if it click no mean go and click yes these options"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Closing section includes two clearly labeled buttons: “Yes” and “No”.",
+        "Clicking “Yes” displays exactly: \"I love you, wife garu\" (English text).",
+        "Clicking “No” displays an English message that instructs the user to click “Yes” (e.g., \"No means: go and click Yes.\") without navigating away or breaking the flow.",
+        "The existing Closing section actions (“Back to Top”, “Replay Surprise”) remain available and continue working as before (either retained alongside the new buttons or reorganized without loss of functionality)."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add the generated teddy image asset to the frontend as a static file and use it in the Closing section (do not serve it from the backend).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "valentine teady"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A teddy image file exists under frontend/public/assets/generated and is referenced by the Closing section via a /assets/generated/... path.",
+        "The app builds successfully and the teddy image loads without 404s in the browser."
       ]
     }
   ],
   "constraints": [
-    "Do not edit files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or anything inside frontend/src/components/ui (immutable paths).",
-    "Keep all user-facing text in English."
+    "Do not edit files under frontend/src/components/ui or the immutable hook paths listed in SYSTEM_CONTEXT.",
+    "Keep all backend logic (if any is added later) within the single Motoko actor at backend/main.mo; no additional backend services."
   ],
   "nonGoals": [
-    "Changing any other Valentine copy, layout, or game mechanics beyond removing the copyright text.",
-    "Adding new backend logic or persistence."
+    "Adding or changing Internet Identity authentication flows.",
+    "Adding backend persistence or any canister-based storage for the Yes/No outcome.",
+    "Adding real-time or multiplayer functionality."
   ],
   "imageRequirements": {
-    "required": [],
+    "required": [
+      "Valentine teddy illustration, transparent background (valentine-teddy.dim_512x512.png)"
+    ],
     "edits": []
   }
 }
